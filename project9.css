@@ -1,0 +1,222 @@
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+input {
+  border: none;
+}
+
+input:focus {
+  outline: none;
+}
+
+button {
+  border: none;
+}
+
+.dn {
+  display: none;
+}
+
+.finished {
+  color: red;
+}
+
+.container {
+  width: 98%;
+  margin: 40px auto;
+}
+
+.container .head {
+  background-color: #009688;
+  padding: 15px;
+}
+
+.container .head form {
+  background-color: #ffffff3d;
+  width: calc(100% - 25px);
+  position: relative;
+  --color-bg: #ff4646;
+  --bottom: 0px;
+  --opacity: 0;
+}
+
+.container .head form::before {
+  content: "Please add your task !";
+  position: absolute;
+  left: 10px;
+  bottom: calc(var(--bottom) - 32px);
+  padding: 7px;
+  background-color: var(--color-bg);
+  color: #fff;
+  border-radius: 0 7px 7px;
+  opacity: var(--opacity);
+}
+
+.container .head form::after {
+  content: "";
+  position: absolute;
+  left: 10px;
+  bottom: var(--bottom);
+  border-color: transparent transparent var(--color-bg);
+  border-width: 8px;
+  border-style: solid;
+  opacity: var(--opacity);
+}
+
+.container .head form #taskInput {
+  background-color: transparent;
+  height: 50px;
+  width: inherit;
+  color: #fff;
+  font-size: 20px;
+  padding: 10px;
+  position: relative;
+}
+
+.container .head form #plus {
+  color: #009688;
+  background-color: #fff;
+  border-radius: 50%;
+  font-size: 30px;
+  font-weight: bold;
+  padding: 10px;
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  right: -25px;
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+  transition: transform 0.3s, -webkit-transform 0.3s;
+  cursor: pointer;
+}
+
+.container .head form #plus:hover {
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+
+.container .body {
+  padding: 0.1px;
+  background-color: #eee;
+}
+
+.container .body .task-show {
+  background-color: #fff;
+  padding: 15px;
+  margin: 15px;
+  font-weight: 600;
+  color: #777;
+}
+
+.container .body .parent {
+  color: #000;
+}
+
+.container .body .parent .task-box {
+  background-color: #fff;
+  padding: 15px;
+  margin: 15px;
+  font-weight: 600;
+  border-bottom-style: outset;
+}
+.container .body .parent .task-box.repeat {
+  background-color: #ff0057;
+  transform: translateX(0) scale(1);
+  animation: myrepeat 0.5s ease-out forwards;
+}
+@keyframes myrepeat {
+  0% {
+    background-color: #ff0057;
+    transform: translateX(-10px) scale(1.05);
+  }
+  25% {
+    transform: translateX(10px);
+  }
+  50% {
+    transform: translateX(-10px);
+  }
+  75% {
+    transform: translateX(10px);
+  }
+  100% {
+    background-color: #fff;
+    transform: translateX(0px) scale(1);
+  }
+}
+.container .body .parent .task-box .delete {
+  border-radius: 6px;
+  margin: -5px;
+  float: right;
+  color: #fff;
+  padding: 5px 10px;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: #ff0057;
+  cursor: pointer;
+}
+
+.container .footer {
+  font-weight: bold;
+  font-size: 15px;
+  color: #333;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 15px;
+}
+
+.container .footer .get-task span {
+  color: #fff;
+  background-color: #ff0057;
+  padding: 1px 7px;
+  border-radius: 5px;
+}
+
+.container .footer .all {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.container .footer .all * {
+  color: #fff;
+  margin: 0 5px;
+  padding: 6px;
+  font-size: 13px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.container .footer .all .delete-all {
+  background-color: #ff0057;
+}
+
+.container .footer .all .finished-all {
+  background-color: #2196f3;
+}
+
+.container .footer .completed {
+  color: #000;
+}
+
+.container .footer .completed span {
+  color: #fff;
+  background-color: #2196f3;
+  padding: 1px 7px;
+  border-radius: 5px;
+}
