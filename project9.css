@@ -168,32 +168,41 @@ button {
   font-weight: bold;
   font-size: 15px;
   color: #333;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+  /* display: -webkit-box; */
+  /* display: -ms-flexbox; */
+  /* display: flex; */
+  /* -webkit-box-pack: justify; */
+  /* -ms-flex-pack: justify; */
+  /* justify-content: space-between; */
+  /* -webkit-box-align: center; */
+  /* -ms-flex-align: center; */
+  /* align-items: center; */
   padding: 15px;
 }
-
-.container .footer .get-task span {
+.container .footer .counters{
+      display: flex;
+    justify-content: space-between;
+}
+.container .footer .counters .get-task span {
   color: #fff;
   background-color: #ff0057;
   padding: 1px 7px;
   border-radius: 5px;
+}
+.container .footer  .delete-all {
+  background-color: #ff0057;
 }
 
 .container .footer .all {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  justify-content: space-between;
+  margin-top:10px;
 }
 
-.container .footer .all * {
+.container .footer .counters .delete-all ,
+.container .footer .all .finished-all {
   color: #fff;
   margin: 0 5px;
   padding: 6px;
@@ -202,9 +211,6 @@ button {
   cursor: pointer;
 }
 
-.container .footer .all .delete-all {
-  background-color: #ff0057;
-}
 
 .container .footer .all .finished-all {
   background-color: #2196f3;
